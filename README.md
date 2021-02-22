@@ -5,7 +5,16 @@
 - Start by creating free tier Astra database found at [https://astra.datastax.com](https://astra.datastax.com).
 - Create a keyspace called `bank`.
 - Import the [Bank Transactions](/bank-transactions.studio-nb.tar)Studio notebook that contains the `transactions` schema, some example queries, and example SAI indexes.  This schema is also found in the [transactions.cql](/transactions.cql) file.
-- Add data with DSBulk.
+- Load data.  Download the secure connect bundle for the Astra database.  Download dsbulk.  Decompress `transactions.csv.gz`. Load the data with:
+
+```
+dsbulk load \
+-b secure-connect-datastax-bank.zip \
+-k bank -t transactions \
+-u username -p password \
+-header true \
+-url transactions.csv
+```
 
 ## Add to XAMPP or Similar PHP/Web Stack
 
