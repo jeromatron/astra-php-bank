@@ -56,7 +56,7 @@ foreach ($transactions as $transaction) {
 		<td>' . $transaction->merchant_id . '</td>
 		<td>' . $transaction->category . '</td>
 	</tr>
-';
+	';
 }
 echo '
 </table>
